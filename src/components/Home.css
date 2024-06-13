@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .main {
+    margin: 0;
+    
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMUzZR0RL1RO2o9gLQxshqk75y-EYMUML0Uw&s');
+  
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+  }
+  .redButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .redButton:hover {
+    background-color: darkred;
+  }

@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import "./index.css";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import Home from "./components/Home";
+import Loginn from "./components/Loginn";
+import Profile from "./components/Profile";
+import Signup from "./components/Signup";
+
+import NotFound from "./components/NotFound";
+
+import Contactus from "./components/Contactus";
+import Fitnessjournal from "./components/Fitnessjournal";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/Home" Component={Home} />
+
+          <Route path="/Fitnessjournal" Component={Fitnessjournal} />
+          <Route path="/Contactus" Component={Contactus} />
+
+          <Route path="/loginn" Component={Loginn} />
+          <Route path="/signup" Component={Signup} />
+          <Route path="/profile" Component={Profile} />
+          <Route path="*" Component={NotFound} />
+        </Routes>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
