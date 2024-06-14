@@ -63,6 +63,8 @@ const Profile = () => {
         <p>email : {userdata.email}</p>
         <p>Under 18? : {userdata.isUnder18 ? "Yes" : "No"}</p>
         <p>Phone number : {userdata.phonenumber} </p>
+        <p>weight : {userdata.weight} </p>
+        <p>height : {userdata.height} </p>
         <button type="button" onClick={() => handleLogout()}>
           Logout
         </button>

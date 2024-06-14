@@ -37,62 +37,62 @@ const Loginn = () => {
         toast.error(error.response.data.error);
       }
     }
-    navigate("/profile");
+    navigate("/Profile");
   };
   return (
     <>
       <ToastContainer />
       <div className="main">
-      <div className="wrapper">
-        <form action="">
-          <h1>Login</h1>
-          <div className="input-box">
-            <input
-              autoComplete="false"
-              type="text"
-              placeholder="Email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <MdEmail className="icon" />
-          </div>
-          <div className="input-box">
-            <input
-              autoComplete="false"
-              type="password"
-              placeholder="Password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <FaLock className="icon" />
-          </div>
-          <div className="remember-forgot">
-            <label>
-              <input type="checkbox" />
-              Remember Me
-            </label>
-            <a href="#">forgot Password</a>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              handleLoginn();
-            }}
-          >
-            Login
-          </button>
-          <div className="register-link">
-            <p>
-              Don't have an account?
-              <a href="#" onClick={() => navigate("/signup")}>
-                Register{" "}
-              </a>
-            </p>
-          </div>
-        </form>
-      </div>
+        <div className="wrapper">
+          <form action="">
+            <h1>Login</h1>
+            <div className="input-box">
+              <input
+                autoComplete="false"
+                type="text"
+                placeholder="Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <MdEmail className="icon" />
+            </div>
+            <div className="input-box">
+              <input
+                autoComplete="false"
+                type="password"
+                placeholder="Password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <FaLock className="icon" />
+            </div>
+            <div className="remember-forgot">
+              <label>
+                <input type="checkbox" />
+                Remember Me
+              </label>
+              <a href="#">forgot Password</a>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                handleLoginn();
+              }}
+            >
+              Login
+            </button>
+            <div className="register-link">
+              <p>
+                Don't have an account?
+                <a href="#" onClick={() => navigate("/signup")}>
+                  Register{" "}
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );

@@ -4,7 +4,10 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useNavigate } from "react-router-dom";
-import CloseButton from "react-bootstrap/CloseButton";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import { IoFitnessSharp } from "react-icons/io5";
+
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,6 +20,11 @@ const Signup = () => {
   const [date, setdate] = useState("");
   const [number, setnumber] = useState("");
   const [isUnder18, setisUnder18] = useState(false);
+  const [age, setage] = useState("");
+  const [weight, setweight] = useState("");
+  const [height, setheight] = useState("");
+  const [medicalissues, setmedicalissues] = useState("");
+
   const handleRegister = async () => {
     try {
       if (name.trim() === "") return toast.warning("Please enter your name");
@@ -33,6 +41,10 @@ const Signup = () => {
         dob: date,
         phonenumber: number,
         isUnder18: isUnder18,
+        age: age,
+        weight: weight,
+        height: height,
+        medicalissues: medicalissues,
       });
       console.log(response);
       if (response.data.success) {
@@ -67,22 +79,45 @@ const Signup = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        data-bs-theme="dark"
         className="bg-light p-2"
       >
-        <CloseButton />
-        <CloseButton enabled />
+        <Container style={{ paddingRight: "60rem" }}>
+          <Navbar
+            style={{ paddingRight: "60rem" }}
+            fixed="top"
+            expand="lg"
+            className="bg-body-tertiary"
+          >
+            <Container>
+              <IoFitnessSharp />
+              <Navbar.Brand
+                onClick={() => navigate("/Fitnessjournal")}
+                href="#"
+              >
+                Fitnessjournal
+              </Navbar.Brand>
+            </Container>
+
+            <Container>
+              <Navbar.Brand onClick={() => navigate("/")} href="#">
+                Home
+              </Navbar.Brand>
+            </Container>
+          </Navbar>
+        </Container>
+
         <h5
           style={{
-            marginLeft: "350px",
-            marginTop: "20px",
+            marginLeft: "540px",
+            marginTop: "50px",
             fontSize: "50px",
+            fontStyle: "bold",
             marginBottom: "50px",
             color: "black",
             textShadow: "revert-layer",
           }}
         >
-          Register for Fitness-Journal
+          Register
         </h5>
         <Form>
           <Row className="mb-3">
@@ -143,6 +178,49 @@ const Signup = () => {
               type="number"
               size="4"
               placeholder="XXXXXXXXXX"
+            />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formGridAge">
+            <Form.Label style={{ color: "black" }}>Enter your Age</Form.Label>
+            <Form.Control
+              value={age}
+              onChange={(e) => setage(e.target.value)}
+              type="age"
+              placeholder="Enter age"
+            />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formGridWeight">
+            <Form.Label style={{ color: "black" }}>
+              Enter your weight
+            </Form.Label>
+            <Form.Control
+              value={weight}
+              onChange={(e) => setweight(e.target.value)}
+              type="weight"
+              placeholder="Enter weight in kg"
+            />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formGridHeight">
+            <Form.Label style={{ color: "black" }}>
+              Enter your height
+            </Form.Label>
+            <Form.Control
+              value={height}
+              onChange={(e) => setheight(e.target.value)}
+              type="height"
+              placeholder="Enter height"
+            />
+          </Form.Group>
+          <Form.Group
+            style={{ color: "black" }}
+            className="mb-3"
+            id="formGridCheckbox"
+          >
+            <Form.Check
+              checked={medicalissues}
+              onChange={(e) => setmedicalissues(e.target.checked)}
+              type="checkbox"
+              label="Any medical issues?"
             />
           </Form.Group>
           <Form.Group

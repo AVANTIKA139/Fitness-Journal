@@ -80,8 +80,14 @@ const Home = () => {
                   <Nav.Link href="#pricing">Contact Us</Nav.Link>
                 </Nav>
                 <Nav style={{ fontSize: "20px" }}>
-                  <Nav.Link href="#deets">Log In</Nav.Link>
-                  <Nav.Link eventKey={2} href="#memes">
+                  <Nav.Link onClick={() => navigate("/Loginn")} href="#deets">
+                    Log In
+                  </Nav.Link>
+                  <Nav.Link
+                    onClick={() => navigate("/signup")}
+                    eventKey={2}
+                    href="#memes"
+                  >
                     Sign Up
                   </Nav.Link>
                 </Nav>

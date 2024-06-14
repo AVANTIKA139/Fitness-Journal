@@ -13,20 +13,22 @@ import NotFound from "./components/NotFound";
 
 import Contactus from "./components/Contactus";
 import Fitnessjournal from "./components/Fitnessjournal";
+import Features from "./components/Features";
 
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/Home" Component={Home} />
+          <Route path="/" Component={Home} />
+          <Route path="/Features" Component={Features} />
 
           <Route path="/Fitnessjournal" Component={Fitnessjournal} />
           <Route path="/Contactus" Component={Contactus} />
 
           <Route path="/loginn" Component={Loginn} />
           <Route path="/signup" Component={Signup} />
-          <Route path="/profile" Component={Profile} />
+          <Route path="/Profile" Component={Profile} />
           <Route path="*" Component={NotFound} />
         </Routes>
       </Router>

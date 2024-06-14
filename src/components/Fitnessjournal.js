@@ -24,15 +24,15 @@ const Fitnessjournal = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav style={{ fontSize: "20px" }} className="me-auto">
-                <Nav.Link onClick={() => navigate("/Home")} href="#features">
+                <Nav.Link onClick={() => navigate("/")} href="#features">
                   Home
                 </Nav.Link>
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#pricing">Contact Us</Nav.Link>
+                <Nav.Link style={{cursor:"pointer"}} href="#features">Features</Nav.Link>
+                <Nav.Link style={{cursor:"pointer"}} href="#Contact Us">Contact Us</Nav.Link>
               </Nav>
-              <Nav style={{ fontSize: "20px" }}>
+              <Nav style={{ fontSize: "20px", cursor:"pointer" }}>
                 <Nav.Link href="#deets">Log In</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
+                <Nav.Link  eventKey={2} href="#memes">
                   Sign Up
                 </Nav.Link>
               </Nav>
