@@ -6,6 +6,9 @@ import "./loginn.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import { IoFitnessSharp } from "react-icons/io5";
 
 const Loginn = () => {
   const navigate = useNavigate();
@@ -41,6 +44,29 @@ const Loginn = () => {
   };
   return (
     <>
+      <Container style={{ paddingRight: "60rem" }}>
+        //{" "}
+        <Navbar
+          style={{ paddingRight: "60rem" }}
+          fixed="top"
+          expand="lg"
+          className="bg-body-tertiary"
+        >
+          <Container>
+            <IoFitnessSharp />
+            <Navbar.Brand onClick={() => navigate("/Fitnessjournal")} href="#">
+              Fitnessjournal
+            </Navbar.Brand>
+          </Container>
+
+          <Container>
+            <Navbar.Brand onClick={() => navigate("/")} href="#">
+              Home
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </Container>
+
       <ToastContainer />
       <div className="main">
         <div className="wrapper">

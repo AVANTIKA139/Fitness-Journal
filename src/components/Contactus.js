@@ -1,143 +1,110 @@
-import React from "react";
-
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-} from "mdb-react-ui-kit";
+// src/components/ContactPage.js
+import React, { useState } from "react";
+import "./ContactPage.css";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import { IoFitnessSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Contactus = () => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log("Form submitted:", formData);
+    setSubmitted(true);
+  };
+
   return (
     <>
-      <MDBFooter
-        bgColor="light"
-        className="text-center text-lg-start text-muted"
-      >
-        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-          <div className="me-5 d-none d-lg-block">
-            <span>Get connected with us on social networks:</span>
-          </div>
-
-          <div>
-            <a href="" className="me-4 text-reset">
-              <MDBIcon color="secondary" fab icon="facebook-f" />
-            </a>
-            <a href="" className="me-4 text-reset">
-              <MDBIcon color="secondary" fab icon="twitter" />
-            </a>
-            <a href="" className="me-4 text-reset">
-              <MDBIcon color="secondary" fab icon="google" />
-            </a>
-            <a href="" className="me-4 text-reset">
-              <MDBIcon color="secondary" fab icon="instagram" />
-            </a>
-            <a href="" className="me-4 text-reset">
-              <MDBIcon color="secondary" fab icon="linkedin" />
-            </a>
-            <a href="" className="me-4 text-reset">
-              <MDBIcon color="secondary" fab icon="github" />
-            </a>
-          </div>
-        </section>
-
-        <section className="">
-          <MDBContainer className="text-center text-md-start mt-5">
-            <MDBRow className="mt-3">
-              <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">
-                  <MDBIcon color="secondary" icon="gem" className="me-3" />
-                  Company name
-                </h6>
-                <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
-                </p>
-              </MDBCol>
-
-              <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Angular
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    React
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Vue
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Laravel
-                  </a>
-                </p>
-              </MDBCol>
-
-              <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Pricing
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Settings
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Orders
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Help
-                  </a>
-                </p>
-              </MDBCol>
-
-              <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                <p>
-                  <MDBIcon color="secondary" icon="home" className="me-2" />
-                  New York, NY 10012, US
-                </p>
-                <p>
-                  <MDBIcon color="secondary" icon="envelope" className="me-3" />
-                  info@example.com
-                </p>
-                <p>
-                  <MDBIcon color="secondary" icon="phone" className="me-3" /> +
-                  01 234 567 88
-                </p>
-                <p>
-                  <MDBIcon color="secondary" icon="print" className="me-3" /> +
-                  01 234 567 89
-                </p>
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
-        </section>
-
-        <div
-          className="text-center p-4"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+      <Container style={{ paddingRight: "60rem" }}>
+        //{" "}
+        <Navbar
+          style={{ paddingRight: "60rem" }}
+          fixed="top"
+          expand="lg"
+          className="bg-body-tertiary"
         >
-          © 2021 Copyright:
-          <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
+          <Container>
+            <IoFitnessSharp />
+            <Navbar.Brand onClick={() => navigate("/Fitnessjournal")} href="#">
+              Fitnessjournal
+            </Navbar.Brand>
+          </Container>
+
+          <Container>
+            <Navbar.Brand onClick={() => navigate("/")} href="#">
+              Home
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </Container>
+      <div className="contact-page">
+        <h1 style={{ paddingTop: "3rem" }}>Contact Us</h1>
+        {submitted ? (
+          <div className="thank-you-message">
+            <h2>Thank you for contacting us!</h2>
+            <p>We will get back to you soon.</p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        )}
+
+        <div className="contact-info">
+          <h2>Contact Information</h2>
+          <p>Email: support@Fitnessjournal.com</p>
+          <p>Phone: +1 234 567 890</p>
         </div>
-      </MDBFooter>
+      </div>
     </>
   );
 };

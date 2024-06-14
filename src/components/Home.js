@@ -77,7 +77,12 @@ const Home = () => {
                   >
                     Features
                   </Nav.Link>
-                  <Nav.Link href="#pricing">Contact Us</Nav.Link>
+                  <Nav.Link
+                    onClick={() => navigate("/Contactus")}
+                    href="#pricing"
+                  >
+                    Contact Us
+                  </Nav.Link>
                 </Nav>
                 <Nav style={{ fontSize: "20px" }}>
                   <Nav.Link onClick={() => navigate("/Loginn")} href="#deets">
