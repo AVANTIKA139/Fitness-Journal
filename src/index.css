@@ -1,4 +1,26 @@
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+
+/* For screens smaller than 600px wide (mobile devices) */
+@media only screen and (max-width: 600px) {
+  /* CSS styles */
+}
+
+/* For screens between 600px and 900px wide (tablets) */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  /* CSS styles */
+}
+
+/* For screens larger than 900px wide (desktops) */
+@media only screen and (min-width: 900px) {
+  /* CSS styles */
+}
+
 
 
   
@@ -9,6 +31,7 @@ body {
           font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, #44c49d, #7bfefe);
   
 }
 
@@ -21,7 +44,7 @@ code {
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
-  background: turquoise;
+  background: rgb(1, 2, 2);
   cursor: pointer;
   position: relative;
   z-index: 0;

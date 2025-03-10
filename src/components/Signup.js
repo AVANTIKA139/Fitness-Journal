@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { IoFitnessSharp } from "react-icons/io5";
 
+
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,6 +22,7 @@ const Signup = () => {
   const [number, setnumber] = useState("");
   const [isUnder18, setisUnder18] = useState(false);
   const [age, setage] = useState("");
+  const [gender, setgender] = useState("");
   const [weight, setweight] = useState("");
   const [height, setheight] = useState("");
   const [medicalissues, setmedicalissues] = useState("");
@@ -42,6 +44,7 @@ const Signup = () => {
         phonenumber: number,
         isUnder18: isUnder18,
         age: age,
+        gender: gender,
         weight: weight,
         height: height,
         medicalissues: medicalissues,
@@ -67,21 +70,19 @@ const Signup = () => {
   return (
     <>
       <ToastContainer />
+      
       <div
         style={{
-          marginTop: 0,
-          backgroundImage:
-            'url("https://t4.ftcdn.net/jpg/02/08/13/53/360_F_208135384_P3gpf2RVbAMvTcYo5LGK9gq98PZLNfcc.jpg")',
-          backgroundPosition: "center",
-          height: "100%",
-          filter: "revert-layer",
+       
 
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
+          marginTop: 0,
+          
+          height: "100%",
+         
         }}
         className="bg-light p-2"
       >
-        <Container style={{ paddingRight: "60rem" }}>
+        <Container style={{ paddingRight: "60rem",  }}>
           <Navbar
             style={{ paddingRight: "60rem" }}
             fixed="top"
@@ -189,6 +190,17 @@ const Signup = () => {
               placeholder="Enter age"
             />
           </Form.Group>
+          <Form.Group as={Col} controlId="formGridGender">
+            <Form.Label style={{ color: "black" }}>
+              Enter your gender
+            </Form.Label>
+            <Form.Control
+              value={gender}
+              onChange={(e) => setgender(e.target.value)}
+              type="gender"
+              placeholder="Enter gender"
+            />
+          </Form.Group>
           <Form.Group as={Col} controlId="formGridWeight">
             <Form.Label style={{ color: "black" }}>
               Enter your weight
@@ -240,7 +252,7 @@ const Signup = () => {
             style={{ marginBottom: "50px" }}
             variant="success"
           >
-            Sign In
+            Sign Up
           </Button>{" "}
           {/* <button
             
@@ -257,7 +269,8 @@ const Signup = () => {
             Already Registered
           </Button>{" "}
         </Form>
-      </div>
+        </div>
+     
     </>
   );
 };

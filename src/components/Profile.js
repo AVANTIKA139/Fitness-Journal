@@ -2,8 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
+import {
+  FaUserCircle,
+  FaTint,
+  FaBed,
+  FaUtensils,
+  FaDumbbell,
+} from "react-icons/fa";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -57,30 +62,8 @@ const Profile = () => {
 
   return (
     <>
-      <Tabs
-        defaultActiveKey="profile"
-        id="justify-tab-example"
-        className="mb-3"
-        justify
-      >
-        <Tab eventKey="Workout Tracker" title="Workout Tracker">
-          Tab content for Workout Tracker
-        </Tab>
-        <Tab eventKey="Diet Tracker" title="Diet Tracker">
-          Tab content for Diet Tracker
-        </Tab>
-        <Tab eventKey="Water Intake" title="Water Intake">
-          Tab content for Water Intake
-        </Tab>
-        <Tab eventKey="Sleep Tracker" title="Sleep Tracker" disabled>
-          Tab content for Sleep Tracker
-        </Tab>
-        <Tab eventKey="Goal Setting" title="Goal Setting">
-          Tab content for Goal Setting
-        </Tab>
-      </Tabs>
-      <div className="mainbody">
-        <h1>Hello {userdata.username}, Welcome Back!</h1>
+      {/* <div className="mainbody">
+        <h1>Hello {userdata.name}, Welcome Back!</h1>
         <p>
           Age :{new Date().getFullYear() - new Date(userdata.dob).getFullYear()}{" "}
           years
@@ -93,6 +76,135 @@ const Profile = () => {
         <button type="button" onClick={() => handleLogout()}>
           Logout
         </button>
+      </div> */}
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          background:
+            "url('https://source.unsplash.com/1600x900/?fitness,gym') no-repeat left center/cover",
+          padding: "20px",
+          fontFamily: "Arial, sans-serif",
+          color:"white",
+        }}
+      >
+        <div
+          style={{
+            // background: "rgba(255, 255, 255, 0.8)",
+            backdropFilter: "blur(10px)",
+            // padding: "25px",
+            // borderRadius: "15px",
+            // boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+            // textAlign: "center",
+            maxWidth: "400px",
+            // width: "100%",
+            background: "rgba(0, 0, 0, 0.75)",
+            padding: "40px",
+            borderRadius: "120px",
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
+            width: "400px",
+            textAlign: "center",
+          }}
+        >
+          <FaUserCircle
+            size={120}
+            
+            style={{ marginBottom: "15px", display: "block", margin: "0 auto", 
+              color: "white"}}
+          />
+          <h2> Hello {userdata.name}, Welcome back!</h2>
+          <p
+            style={{ fontSize: "14px", color: "white", marginBottom: "15px" }}
+          ></p>
+
+          <div style={{ fontSize: "16px", color: "whitesmoke" }}>
+            <p>Email: {userdata.email}</p>
+            <p>Phone: {userdata.phonenumber}</p>
+            <p>Height: {userdata.height} cm</p>
+            <p>Weight: {userdata.weight} kg</p>
+            <p>
+              Age :
+              {new Date().getFullYear() - new Date(userdata.dob).getFullYear()}{" "}
+              years
+            </p>
+          </div>
+          <button
+            onClick={() => handleLogout()}
+            style={{
+             backgroundColor: "#f39c12",
+                color: "#000",
+              padding: "12px 18px",
+              border: "none",
+              borderRadius: "10px",
+              cursor: "pointer",
+              transition: "0.3s",
+              marginTop: "10px",
+              fontSize: "16px",
+              fontWeight: "bold",
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#c9302c")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#d9534f")}
+          >
+            Log Out
+          </button>
+        </div>
+
+        <div style={{ display: "flex", gap: "20px", marginTop: "25px" }}>
+          {[
+            {
+              title: "Workout Tracker",
+              icon: <FaDumbbell size={25} color="#ff5733" />,
+            },
+            {
+              title: "Water Intake",
+              icon: <FaTint size={25} color="#007BFF" />,
+            },
+            {
+              title: "Sleep Tracker",
+              icon: <FaBed size={25} color="#673AB7" />,
+            },
+            {
+              title: "Diet Tracker",
+              icon: <FaUtensils size={25} color="#4CAF50" />,
+            },
+          ].map((stat, index) => (
+            <button
+              key={index}
+              style={{
+                background: "rgba(255, 255, 255, 0.8)",
+                backdropFilter: "blur(10px)",
+                padding: "15px",
+                borderRadius: "15px",
+                textAlign: "center",
+                boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
+                width: "150px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "16px",
+                fontWeight: "bold",
+                color: "#333",
+                transition: "0.3s",
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = "#ddd";
+                e.target.style.transform = "scale(1.05)";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
+              {stat.icon}
+              <p style={{ marginTop: "8px" }}>{stat.title}</p>
+            </button>
+          ))}
+        </div>
       </div>
     </>
   );

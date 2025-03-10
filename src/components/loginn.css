@@ -18,8 +18,8 @@
     justify-content:center ;
     align-items: center;
     min-height: 100vh;
-    background: url('https://img.freepik.com/premium-photo/healthy-lifestyle-sport-diet-concept_645697-7670.jpg');
-  
+ 
+   
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
@@ -34,12 +34,13 @@
     color: rgb(1, 1, 1);
     border-radius: 10px;
     padding: 30px 40px;
+    margin-left: 845px;
 
 
 
   }
   .wrapper h1 {
-    font-size: 36px;
+    font-size: 46px;
     text-align: center;
 
   }

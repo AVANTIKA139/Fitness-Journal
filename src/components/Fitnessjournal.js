@@ -27,12 +27,16 @@ const Fitnessjournal = () => {
                 <Nav.Link onClick={() => navigate("/")} href="#features">
                   Home
                 </Nav.Link>
-                <Nav.Link style={{cursor:"pointer"}} href="#features">Features</Nav.Link>
-                <Nav.Link style={{cursor:"pointer"}} href="#Contact Us">Contact Us</Nav.Link>
+                <Nav.Link style={{ cursor: "pointer" }} href="#features">
+                  Features
+                </Nav.Link>
+                <Nav.Link style={{ cursor: "pointer" }} href="#Contact Us">
+                  Contact Us
+                </Nav.Link>
               </Nav>
-              <Nav style={{ fontSize: "20px", cursor:"pointer" }}>
+              <Nav style={{ fontSize: "20px", cursor: "pointer" }}>
                 <Nav.Link href="#deets">Log In</Nav.Link>
-                <Nav.Link  eventKey={2} href="#memes">
+                <Nav.Link eventKey={2} href="#memes">
                   Sign Up
                 </Nav.Link>
               </Nav>

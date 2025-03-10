@@ -1,9 +1,11 @@
 import React from "react";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
-import { Route, Routes, Link, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes,  BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
 import Loginn from "./components/Loginn";
 import Profile from "./components/Profile";
@@ -25,31 +27,15 @@ const App = () => {
   return (
     <>
       <Router>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/workout-tracker">Workout Tracker</Link>
-            </li>
-            <li>
-              <Link to="/diet-tracker">Diet Tracker</Link>
-            </li>
-            <li>
-              <Link to="/water-intake">Water Intake</Link>
-            </li>
-            <li>
-              <Link to="/sleep-tracker">Sleep Tracker</Link>
-            </li>
-            <li>
-              <Link to="/goal-setting">Goal Setting</Link>
-            </li>
-          </ul>
-        </nav> */}
+    
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/Features" Component={Features} />
 
           <Route path="/Fitnessjournal" Component={Fitnessjournal} />
           <Route path="/Contactus" Component={Contactus} />
+
+          
 
           <Route path="/Loginn" Component={Loginn} />
           <Route path="/signup" Component={Signup} />

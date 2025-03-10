@@ -4,7 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+ 
+   
+    
+    
+    
   }
+ 
   .main {
     margin: 0;
     
@@ -13,15 +19,35 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: flex;
-    justify-content:center ;
-    align-items: center;
-    min-height: 100vh;
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMUzZR0RL1RO2o9gLQxshqk75y-EYMUML0Uw&s');
+  
+   
+    
+    
+   
+    
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    
   
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
+
   }
+  .nav{
+    background: linear-gradient(to right, #44c49d, #7bfefe);
+
+  }
+ 
+ .monti{
+  background: linear-gradient(to right, #44c49d, #7bfefe);
+ }
+  
   .redButton {
     background-color: red;
     color: white;
@@ -34,3 +60,5 @@
   .redButton:hover {
     background-color: darkred;
   }
+ 
+ 
