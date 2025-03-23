@@ -7,8 +7,7 @@ import { CgGym } from "react-icons/cg";
 import Carousel from "react-bootstrap/Carousel";
 import "./Home.css";
 import { Card } from "react-bootstrap";
-import Image from 'react-bootstrap/Image';
-
+import Image from "react-bootstrap/Image";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -81,9 +80,6 @@ const Home = () => {
             </Container>
           </Navbar>
           <div className="monti">
-
-          
-             
             <Carousel data-bs-theme="dark">
               <Carousel.Item
                 style={{
@@ -239,11 +235,11 @@ const Home = () => {
                 </Card.Body>
               </Card>
             </div>
-           
+
             <Accordion
               style={{
                 marginRight: "250px",
-                
+
                 marginLeft: "250px",
                 marginTop: "54px",
                 backgroundColor: "turquoise",
@@ -255,7 +251,10 @@ const Home = () => {
                 <Accordion.Header style={{ backgroundColor: "white" }}>
                   About Us
                 </Accordion.Header>
-                <Image src="https://blog.solguruz.com/wp-content/uploads/2023/11/Fitness-App-Development-A-Comprehensive-Guide.png" fluid />
+                <Image
+                  src="https://blog.solguruz.com/wp-content/uploads/2023/11/Fitness-App-Development-A-Comprehensive-Guide.png"
+                  fluid
+                />
                 <Accordion.Body style={{ backgroundColor: "turquoise" }}>
                   Welcome to Fitnessjournal, your ultimate companion on the
                   journey to a healthier and fitter you. Our mission is to
@@ -275,8 +274,11 @@ const Home = () => {
                 <Accordion.Header style={{ backgroundColor: "white" }}>
                   Our Vision
                 </Accordion.Header>
-                <Image src="https://blog.smart.com.ph/wp-content/uploads/2022/03/Essential-Fitness-Apps-to-Track-Your-Workouts.jpg?w=1170" fluid />
-                
+                <Image
+                  src="https://blog.smart.com.ph/wp-content/uploads/2022/03/Essential-Fitness-Apps-to-Track-Your-Workouts.jpg?w=1170"
+                  fluid
+                />
+
                 <Accordion.Body style={{ backgroundColor: "turquoise" }}>
                   At Fitnessjournal, we envision a world where everyone has the
                   opportunity to lead a healthy and active lifestyle. We are
@@ -291,31 +293,25 @@ const Home = () => {
               </Accordion.Item>
             </Accordion>
 
-              <button
-          type="button"
-          class="btn btn-primary btn-lg"
-          onClick={() => navigate("/signup")}
-          style={{
-            cursor: "pointer",
-marginTop:"132px",
-            
+            <button
+              type="button"
+              class="btn btn-primary btn-lg"
+              onClick={() => navigate("/signup")}
+              style={{
+                cursor: "pointer",
+                marginTop: "132px",
 
-            
-            paddingRight:"63px",
-            paddingLeft:"63px",
-            marginLeft:"500px",
+                paddingRight: "63px",
+                paddingLeft: "63px",
+                marginLeft: "500px",
 
-            color: "red",
-            background: "white",
-            fontStyle: "bold",
-          }}
-        >
-          Let's START
-        </button> 
-
-
-
-            
+                color: "red",
+                background: "white",
+                fontStyle: "bold",
+              }}
+            >
+              Let's START
+            </button>
 
             <div
               className="text-center p-4"
